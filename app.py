@@ -24,11 +24,11 @@ def predict():
     SqFt = float(request.args.get('SqFt'))
     bed = float(request.args.get('bed'))
     bath = float(request.args.get('bath'))
-    offer = float(request.args.get('offers'))
+    
     
     
 
-    prediction = model.predict([[home,SqFt,bed,bath,offer]])
+    prediction = model.predict([[home,SqFt,bed,bath]])
     
         
     return render_template('index.html', prediction_text='Electricity predicted : {}'.format(prediction))
